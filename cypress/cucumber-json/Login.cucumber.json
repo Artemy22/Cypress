@@ -1,0 +1,62 @@
+[
+  {
+    "keyword": "Feature",
+    "name": "Login",
+    "line": 1,
+    "id": "login",
+    "tags": [],
+    "uri": "Login.feature",
+    "elements": [
+      {
+        "id": "login;ebate-login",
+        "keyword": "Scenario",
+        "line": 3,
+        "name": "Ebate Login",
+        "tags": [],
+        "type": "scenario",
+        "steps": [
+          {
+            "arguments": [],
+            "keyword": "Given ",
+            "line": 4,
+            "name": "I navigate to the login page",
+            "result": {
+              "status": "passed",
+              "duration": 2203000000
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "When ",
+            "line": 5,
+            "name": "I enter credentials",
+            "result": {
+              "status": "passed",
+              "duration": 929000000
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "And ",
+            "line": 6,
+            "name": "Click on the Login bnt",
+            "result": {
+              "status": "passed",
+              "duration": 155000000
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "Then ",
+            "line": 7,
+            "name": "My user is logged in",
+            "result": {
+              "status": "passed",
+              "duration": 1711000000
+            }
+          }
+        ]
+      }
+    ]
+  }
+]
