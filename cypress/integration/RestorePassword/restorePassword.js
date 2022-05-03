@@ -37,5 +37,5 @@ describe('Automation Test for restoring password', function () {
 
     Then('I am redirected to the login page', () => {
         loginPage.isOnLoginPage();
-    })
+    })    
 });
