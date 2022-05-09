@@ -22,7 +22,7 @@
             "name": "I navigate to the login page",
             "result": {
               "status": "passed",
-              "duration": 4743000000
+              "duration": 3480000000
             }
           },
           {
@@ -32,7 +32,7 @@
             "name": "I enter credentials",
             "result": {
               "status": "passed",
-              "duration": 917000000
+              "duration": 929000000
             }
           },
           {
@@ -42,7 +42,7 @@
             "name": "Click on the Login bnt",
             "result": {
               "status": "passed",
-              "duration": 151000000
+              "duration": 208000000
             }
           },
           {
@@ -51,8 +51,9 @@
             "line": 7,
             "name": "My user is logged in",
             "result": {
-              "status": "passed",
-              "duration": 1967000000
+              "status": "failed",
+              "duration": 4045000000,
+              "error_message": "AssertionError: Timed out retrying after 4000ms: Expected to find content: 'AI' within the selector: '[class=signout-link]' but never did.\n    at Context.eval (https://tenant2.sbx.e-bate.net/__cypress/tests?p=cypress\\integration\\Login.feature:60:8)\n    at Context.resolveAndRunStepDefinition (https://tenant2.sbx.e-bate.net/__cypress/tests?p=cypress\\integration\\Login.feature:10576:29)\n    at Context.eval (https://tenant2.sbx.e-bate.net/__cypress/tests?p=cypress\\integration\\Login.feature:9897:35)"
             }
           }
         ]

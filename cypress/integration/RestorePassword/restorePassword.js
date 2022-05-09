@@ -11,7 +11,7 @@ describe('Automation Test for restoring password', function () {
     const loginPage = new LoginPage();
 
     Given('I navigate to the login page', () => {
-        cy.visit(Cypress.env(base_url))
+        cy.visit(Cypress.env('base_url'))
         cy.contains('Sign In To')
     })
 
