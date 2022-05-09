@@ -1,4 +1,4 @@
-Feature: Restore Password (without email checking)
+Feature: Restore Password, without email checking.
 
     Scenario: Click on the forgot password icon
         Given I navigate to the login page
