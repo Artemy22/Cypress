@@ -4,6 +4,7 @@ import ProfilePage from '../../support/PageObjects/ProfilePage'
 describe('Automation Test for the Login Page', function () {
 
     after(function () {
+        cy.wait(cy.contains('Your profile'))
         const profilePage = new ProfilePage;
         profilePage.clickDropDownUser().clickButtonSubit();
     })
@@ -25,6 +26,6 @@ describe('Automation Test for the Login Page', function () {
     });
 
     Then('My user is logged in', () => {
-        cy.contains('Your profile')
+        cy.wait(5000)
     })
 });

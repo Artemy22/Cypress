@@ -1,6 +1,6 @@
 Feature: Login
 
-Scenario: Ebate Login
+Scenario: DFX Login
     Given I navigate to the login page
     When I enter credentials
     And Click on the Login bnt
