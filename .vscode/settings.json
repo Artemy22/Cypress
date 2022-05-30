@@ -1,0 +1,21 @@
+{
+  "search.exclude": {
+    "**/.yarn": true,
+    "**/.pnp.*": true
+  },
+  "eslint.nodePath": ".yarn/sdks",
+  "prettier.prettierPath": ".yarn/sdks/prettier/index.js",
+  "compile-hero.disable-compile-files-on-did-save-code": true,
+
+  "cucumberautocomplete.steps": [
+    "cypress/integration/**/*.js",
+],
+
+"cucumberautocomplete.strictGherkinCompletion": true,
+"editor.quickSuggestions": {
+    "other": true,
+    "comments": false,
+    "strings": true
+}
+}
+
