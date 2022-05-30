@@ -1,30 +1,39 @@
 class LoginPage {
+
+
+     inputEmail = '#email';
+     inputPassword = '#password';
+     buttonSignUp = '.css-15ry5xc';
+     buttonSubmit = '.css-1grsw4x';
+     buttonForgotPassword = '.css-jxm41c > .css-15ry5xc';
+     
+
     fillEmail() {
-        return cy.get('input[name = "email"]').type(Cypress.env('user_email'), { log: false });
+        return cy.get(this.inputEmail).type(Cypress.env('user_email'), { log: false });
     }
     fillPassword() {
-        return cy.get('input[name = "password"]').type(Cypress.env('user_password'), { log: false });
+        return cy.get(this.inputPassword).type(Cypress.env('user_password'), { log: false });
     }
-    clickSignInButton() {
-        return cy.get('button[id="btnLogin"]').click();
+    clickSignUpButton() {
+        return cy.get(this.buttonSignUp).click();
+    }
+    clickSubmitButton() {
+        return cy.get(this.buttonSubmit).click();
     }
     clickForgotPasswordLink() {
-        return cy.get('a[href="/forgottenPassword"]').click();
+        return cy.get().click();
     }
     fillEmailForRestorePassword() {
-        return cy.get('input[name = "email"]').type(Cypress.env('user_email'));
+        return cy.get().type(Cypress.env('user_email'));
     }
     clickResetPasswordButton() {
-        return cy.get('button[id="btnReset"]').click();
+        return cy.get().click();
     }
     clickDoneButtonOnConfirmationPage(){
-        return cy.get('button[id="btnConfirm"]').click();
+        return cy.get().click();
     }
     isOnConfirmationPage(){
-        return cy.contains('[class=pagetitle-text]', 'Password reset email sent.');
-    }
-    isOnLoginPage(){
-        return cy.contains('Sign In To e-bate');
-    }
+        return cy.contains();
+    }    
 }
 export default LoginPage
