@@ -22,7 +22,7 @@
             "name": "I navigate to the login page",
             "result": {
               "status": "passed",
-              "duration": 3609000000
+              "duration": 3581000000
             }
           },
           {
@@ -32,7 +32,7 @@
             "name": "I enter credentials",
             "result": {
               "status": "passed",
-              "duration": 2524000000
+              "duration": 2481000000
             }
           },
           {
@@ -42,7 +42,7 @@
             "name": "Click on the Login bnt",
             "result": {
               "status": "passed",
-              "duration": 356000000
+              "duration": 350000000
             }
           },
           {
@@ -52,7 +52,7 @@
             "name": "My user is logged in",
             "result": {
               "status": "passed",
-              "duration": 5096000000
+              "duration": 4400000000
             }
           }
         ]
