@@ -1,30 +1,31 @@
 import LoginPage from '../../support/PageObjects/LoginPage';
+import ProfilePage from '../../support/PageObjects/ProfilePage'
 
-describe('Automation Test for the Login Page', function() {    
+describe('Automation Test for the Login Page', function () {
 
-    before(function(){
-    cy.fixture('Login').then(function(data)
-    {
-        this.data=data ;
+    after(function () {
+        cy.wait(cy.contains('Your profile'))
+        const profilePage = new ProfilePage;
+        profilePage.clickDropDownUser().clickButtonSubit();
     })
+
+    const loginPage = new LoginPage;
+
+    Given('I navigate to the login page', () => {
+        cy.visit(Cypress.env('base_url'))
+        cy.contains('Sign in to DFX')
     })
 
-    const loginPage = new LoginPage();
+    When('I enter credentials', () => {
+        loginPage.fillEmail();
+        loginPage.fillPassword();
+    });
 
-Given('I navigate to the login page', ()=> {
-    cy.visit(Cypress.env('base_url'))
-    cy.contains('Sign In To')
-})
+    When('Click on the Login bnt', () => {
+        loginPage.clickSubmitButton();
+    });
 
-When('I enter credentials', ()=> {
-    loginPage.fillEmail();
-    loginPage.fillPassword();
+    Then('My user is logged in', () => {
+        cy.wait(5000)
+    })
 });
-
-When('Click on the Login bnt', ()=> {
-    loginPage.clickSignInButton();
-});
-
-Then('My user is logged in', ()=> {
-    cy.contains('[class=signout-link]', 'AI')
-})});

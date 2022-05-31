@@ -8,10 +8,10 @@
     "uri": "Login.feature",
     "elements": [
       {
-        "id": "login;ebate-login",
+        "id": "login;dfx-login",
         "keyword": "Scenario",
         "line": 3,
-        "name": "Ebate Login",
+        "name": "DFX Login",
         "tags": [],
         "type": "scenario",
         "steps": [
@@ -21,9 +21,11 @@
             "line": 4,
             "name": "I navigate to the login page",
             "result": {
+
               "status": "failed",
               "duration": 5430000000,
               "error_message": "AssertionError: Timed out retrying after 4000ms: Expected to find content: 'Sign In To' but never did.\n    at Context.eval (https://dfx.digitalfutures.com/__cypress/tests?p=cypress\\integration\\Login.feature:50:8)\n    at Context.resolveAndRunStepDefinition (https://dfx.digitalfutures.com/__cypress/tests?p=cypress\\integration\\Login.feature:10579:29)\n    at Context.eval (https://dfx.digitalfutures.com/__cypress/tests?p=cypress\\integration\\Login.feature:9897:35)"
+
             }
           },
           {
@@ -32,7 +34,10 @@
             "line": 5,
             "name": "I enter credentials",
             "result": {
-              "status": "skipped"
+
+              "status": "passed",
+              "duration": 2524000000
+
             }
           },
           {
@@ -41,7 +46,9 @@
             "line": 6,
             "name": "Click on the Login bnt",
             "result": {
-              "status": "skipped"
+
+              "status": "passed",
+              "duration": 356000000
             }
           },
           {
@@ -50,7 +57,9 @@
             "line": 7,
             "name": "My user is logged in",
             "result": {
-              "status": "skipped"
+
+              "status": "passed",
+              "duration": 5096000000
             }
           }
         ]
