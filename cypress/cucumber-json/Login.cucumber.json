@@ -21,8 +21,9 @@
             "line": 4,
             "name": "I navigate to the login page",
             "result": {
-              "status": "passed",
-              "duration": 2203000000
+              "status": "failed",
+              "duration": 5430000000,
+              "error_message": "AssertionError: Timed out retrying after 4000ms: Expected to find content: 'Sign In To' but never did.\n    at Context.eval (https://dfx.digitalfutures.com/__cypress/tests?p=cypress\\integration\\Login.feature:50:8)\n    at Context.resolveAndRunStepDefinition (https://dfx.digitalfutures.com/__cypress/tests?p=cypress\\integration\\Login.feature:10579:29)\n    at Context.eval (https://dfx.digitalfutures.com/__cypress/tests?p=cypress\\integration\\Login.feature:9897:35)"
             }
           },
           {
@@ -31,8 +32,7 @@
             "line": 5,
             "name": "I enter credentials",
             "result": {
-              "status": "passed",
-              "duration": 929000000
+              "status": "skipped"
             }
           },
           {
@@ -41,8 +41,7 @@
             "line": 6,
             "name": "Click on the Login bnt",
             "result": {
-              "status": "passed",
-              "duration": 155000000
+              "status": "skipped"
             }
           },
           {
@@ -51,8 +50,7 @@
             "line": 7,
             "name": "My user is logged in",
             "result": {
-              "status": "passed",
-              "duration": 1711000000
+              "status": "skipped"
             }
           }
         ]
