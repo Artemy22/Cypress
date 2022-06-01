@@ -3,7 +3,9 @@ class LoginPage {
 
      inputEmail = '#email';
      inputPassword = '#password';
-     buttonSignUp = '.css-15ry5xc';
+
+     buttonSignUp = '.css-1t999mf > .css-15ry5xc'
+
      buttonSubmit = '.css-1grsw4x';
      buttonForgotPassword = '.css-jxm41c > .css-15ry5xc';
      

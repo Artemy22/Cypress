@@ -1,4 +1,4 @@
-Feature: Login flow
+Feature: Login
 
 Scenario: DFX Login
     Given I navigate to the login page

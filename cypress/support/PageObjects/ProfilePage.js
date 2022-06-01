@@ -1,6 +1,7 @@
 class ProfilePage {
     dropDownUser = '.css-b4y3aj';
     buttonSignOut = '[href="/sign-out"]';
+
     buttonEditProfile = '.css-59wuf6';
 
 
