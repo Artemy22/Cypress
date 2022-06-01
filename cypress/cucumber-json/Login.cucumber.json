@@ -1,14 +1,14 @@
 [
   {
     "keyword": "Feature",
-    "name": "Login",
+    "name": "Login flow",
     "line": 1,
-    "id": "login",
+    "id": "login-flow",
     "tags": [],
     "uri": "Login.feature",
     "elements": [
       {
-        "id": "login;dfx-login",
+        "id": "login-flow;dfx-login",
         "keyword": "Scenario",
         "line": 3,
         "name": "DFX Login",
@@ -21,14 +21,8 @@
             "line": 4,
             "name": "I navigate to the login page",
             "result": {
-<<<<<<< HEAD
-              "status": "failed",
-              "duration": 5810000000,
-              "error_message": "AssertionError: Timed out retrying after 4000ms: Expected to find content: 'Sign in to DFX' but never did.\n    at Context.eval (https://dfx.digitalfutures.com/__cypress/tests?p=cypress\\integration\\Login.feature:52:8)\n    at Context.resolveAndRunStepDefinition (https://dfx.digitalfutures.com/__cypress/tests?p=cypress\\integration\\Login.feature:10652:29)\n    at Context.eval (https://dfx.digitalfutures.com/__cypress/tests?p=cypress\\integration\\Login.feature:9973:35)"
-=======
               "status": "passed",
-              "duration": 3581000000
->>>>>>> profile_creation
+              "duration": 758000000
             }
           },
           {
@@ -37,12 +31,8 @@
             "line": 5,
             "name": "I enter credentials",
             "result": {
-<<<<<<< HEAD
-              "status": "skipped"
-=======
               "status": "passed",
-              "duration": 2481000000
->>>>>>> profile_creation
+              "duration": 966000000
             }
           },
           {
@@ -51,12 +41,8 @@
             "line": 6,
             "name": "Click on the Login bnt",
             "result": {
-<<<<<<< HEAD
-              "status": "skipped"
-=======
               "status": "passed",
-              "duration": 350000000
->>>>>>> profile_creation
+              "duration": 138000000
             }
           },
           {
@@ -65,12 +51,8 @@
             "line": 7,
             "name": "My user is logged in",
             "result": {
-<<<<<<< HEAD
-              "status": "skipped"
-=======
               "status": "passed",
-              "duration": 4400000000
->>>>>>> profile_creation
+              "duration": 3041000000
             }
           }
         ]

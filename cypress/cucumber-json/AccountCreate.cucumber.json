@@ -22,7 +22,7 @@
             "name": "I navigate to the login page",
             "result": {
               "status": "passed",
-              "duration": 8667000000
+              "duration": 2437000000
             }
           },
           {
@@ -32,7 +32,7 @@
             "name": "I click on the Sign Up button",
             "result": {
               "status": "passed",
-              "duration": 173000000
+              "duration": 213000000
             }
           },
           {
@@ -42,7 +42,7 @@
             "name": "I'm directed to the Create your DFX account page",
             "result": {
               "status": "passed",
-              "duration": 33000000
+              "duration": 156000000
             }
           },
           {
@@ -52,7 +52,7 @@
             "name": "I fill out all mandatory fields",
             "result": {
               "status": "passed",
-              "duration": 2803000000
+              "duration": 3425000000
             }
           },
           {
@@ -62,7 +62,7 @@
             "name": "Click on the Submit button",
             "result": {
               "status": "passed",
-              "duration": 190000000
+              "duration": 143000000
             }
           },
           {
@@ -72,7 +72,7 @@
             "name": "I'm directed to the Verification page",
             "result": {
               "status": "passed",
-              "duration": 2615000000
+              "duration": 3129000000
             }
           }
         ]

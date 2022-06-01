@@ -1,5 +1,7 @@
+import { BasicTest } from '../BasicTest'
+const basicTest = new BasicTest();
 
-class EditProfilePopup {
+export class EditProfilePopup {
 
     inputFirstName = '#firstName'
     inputLastname = '#lastName'
@@ -12,47 +14,42 @@ class EditProfilePopup {
     buttonSave = '#submit'
 
     fillInputFirstName() {
-        cy.get(this.inputFirstName).click();
-        return this;
+        basicTest.inputFiller(this.inputFirstName, 'updated_'+basicTest.randomName());
     }
 
     fillInputLastname() {
-        cy.get(this.inputFirstName).click();
-        return this;
+        basicTest.inputFiller(this.inputLastname, 'updated_'+basicTest.randomName());
     }
 
-    fillInputFirstName() {
-        cy.get(this.inputFirstName).click();
-        return this;
+    fillInputJobTitle() {
+        basicTest.inputFiller(this.inputJobTitle, 'updated_'+basicTest.randomName());
     }
     
-    fillInputFirstName() {
-        cy.get(this.inputFirstName).click();
-        return this;
+    fillInputOrganisation() {
+        basicTest.inputFiller(this.inputOrganisation, 'updated_'+basicTest.randomName());
     }
     
-    fillInputFirstName() {
-        cy.get(this.inputFirstName).click();
-        return this;
+    fillInputEmailAddress() {
+        //basicTest.inputFiller(this.inputEmailAddress, 'updated_'+basicTest.randomName());
     }
     
-    fillInputFirstName() {
-        cy.get(this.inputFirstName).click();
-        return this;
+    fillInputPhoneNumber() {
+        basicTest.inputFiller(this.inputPhoneNumber, 987654321);
     }
     
-    fillInputFirstName() {
-        cy.get(this.inputFirstName).click();
-        return this;
+    fillInputLinkedInURL() {
+        basicTest.inputFiller(this.inputLinkedInURL, 'updated_'+basicTest.randomName()+'.com');
     }
     
-    fillInputFirstName() {
-        cy.get(this.inputFirstName).click();
-        return this;
+    fillInputLocation() {
+        basicTest.inputFiller(this.inputLocation, 'updated_'+basicTest.randomName());
     }
 
+    clickSaveButton() {
+        basicTest.buttonClicker(this.buttonSave);
+    }
 
-
-
-
+    clickEditProfilePhoto() {
+        basicTest.buttonClicker(this.buttonEditProfilePhoto)
+    }    
 }

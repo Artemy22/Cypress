@@ -14,6 +14,7 @@ class CreateAccountPage {
     buttonAcceptCookies = '.css-zls1bi';
     buttonSignUpOnVerificationPage = 'Sign up with a'
 
+
     checkWhetherCookiesButtonPresented() {
         if (cy.contains("Accept")) {
             cy.get(this.buttonAcceptCookies).click();
@@ -22,32 +23,33 @@ class CreateAccountPage {
     }
 
     fillFirstName() {
-        cy.get(this.inputFirstName).type(basicTest.randomName()), { log: false };
-        return this;
+        basicTest.inputFiller(this.inputFirstName, 'new_'+basicTest.randomName());
+        return this
     }
 
     fillLastName() {
-        cy.get(this.inputLastName).type(basicTest.randomName()), { log: false };
-        return this;
+        basicTest.inputFiller(this.inputLastName, 'new_'+basicTest.randomName());
+        return this
     }
 
     fillEmailAddress() {
-        cy.get(this.inputEmailAddress).type(basicTest.randomName() + '@evolve-consultants.co.uk'), { log: false };
-        return this;
+        basicTest.inputFiller(this.inputEmailAddress, basicTest.randomName() + '@evolve-consultants.co.uk');
+        return this
     }
 
     fillCreatePassword() {
-        cy.get(this.inputCreatePassword).type('1q2w3epassW@!'), { log: false };
-        return this;
+        basicTest.inputFiller(this.inputCreatePassword, '!1q2w3e4r%T');
+        return this
     }
 
     fillRepeatPassword() {
-        cy.get(this.inputRepeatPassword).type('1q2w3epassW@!'), { log: false };
-        return this;
+        basicTest.inputFiller(this.inputRepeatPassword, '!1q2w3e4r%T');
+        return this
     }
 
     clickbuttonSubmit() {
-        return cy.contains(this.buttonSubmit).click();
+        cy.contains(this.buttonSubmit).click();
+        return this
     }
 
     isOnConfirmationPage() {
@@ -55,7 +57,8 @@ class CreateAccountPage {
     }
 
     ClickSignUpWithADifferentEmail() {
-        return cy.contains(this.buttonSignUpOnVerificationPage).click();
+        basicTest.buttonClicker(this.buttonSignUpOnVerificationPage);
+        return this
     }
 
     PreparationToTheNextRun() {
