@@ -2,15 +2,6 @@ import LoginPage from '../../support/PageObjects/LoginPage';
 import ProfilePage from '../../support/PageObjects/ProfilePage'
 
 describe('Automation Test for the Login Page', function () {
-
-    after(function () {
-
-        const profilePage = new ProfilePage;
-        profilePage.clickDropDownUser().clickButtonSubit();
-        cy.contains('Submit');
-
-    })
-
     const loginPage = new LoginPage;
 
     Given('I navigate to the login page', () => {

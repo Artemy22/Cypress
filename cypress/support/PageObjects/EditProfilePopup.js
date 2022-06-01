@@ -3,6 +3,7 @@ const basicTest = new BasicTest();
 
 export class EditProfilePopup {
 
+    /*LOCATORS*/
     inputFirstName = '#firstName'
     inputLastname = '#lastName'
     inputJobTitle = '#job_title'
@@ -11,45 +12,85 @@ export class EditProfilePopup {
     inputPhoneNumber = '#phone'
     inputLinkedInURL = '#linkedin_url'
     inputLocation = '#location'
-    buttonSave = '#submit'
+    buttonSave = 'Save'
 
-    fillInputFirstName() {
-        basicTest.inputFiller(this.inputFirstName, 'updated_'+basicTest.randomName());
+    /*CURRENT VALUES*/
+    FirstName;
+    Lastname;
+    JobTitle;
+    Organisation;
+    EmailAddress;
+    PhoneNumber;
+    LinkedInURL;
+    Location;
+
+    updateFirstName() {
+        this.FirstName = 'updated_' + basicTest.randomName();
+        basicTest.inputClearer(this.inputFirstName).inputFiller(this.inputFirstName, this.FirstName);
+        return this;
     }
 
-    fillInputLastname() {
-        basicTest.inputFiller(this.inputLastname, 'updated_'+basicTest.randomName());
+    updateLastname() {
+        this.Lastname = 'updated_' + basicTest.randomName();
+        basicTest.inputClearer(this.inputLastname).inputFiller(this.inputLastname, this.Lastname);
+        return this;
     }
 
-    fillInputJobTitle() {
-        basicTest.inputFiller(this.inputJobTitle, 'updated_'+basicTest.randomName());
+    updateJobTitle() {
+        this.JobTitle = 'updated_' + basicTest.randomName();
+        basicTest.inputClearer(this.inputJobTitle).inputFiller(this.inputJobTitle, this.JobTitle);
+        return this;
     }
-    
-    fillInputOrganisation() {
-        basicTest.inputFiller(this.inputOrganisation, 'updated_'+basicTest.randomName());
+
+    updateOrganisation() {
+        this.Organisation = 'updated_' + basicTest.randomName();
+        basicTest.inputClearer(this.inputOrganisation).inputFiller(this.inputOrganisation, this.Organisation);
+        return this;
     }
-    
-    fillInputEmailAddress() {
+
+    updateEmailAddress() {
+        this.EmailAddress = 'updated_' + basicTest.randomName();
         //basicTest.inputFiller(this.inputEmailAddress, 'updated_'+basicTest.randomName());
+        return this;
     }
-    
-    fillInputPhoneNumber() {
-        basicTest.inputFiller(this.inputPhoneNumber, 987654321);
+
+    updatePhoneNumber() {
+        this.PhoneNumber = 987654321;
+        basicTest.inputClearer(this.inputPhoneNumber).inputFiller(this.inputPhoneNumber, this.PhoneNumber);
+        return this;
     }
-    
-    fillInputLinkedInURL() {
-        basicTest.inputFiller(this.inputLinkedInURL, 'updated_'+basicTest.randomName()+'.com');
+
+    updateLinkedInURL() {
+        this.LinkedInURL = 'https://updated' + basicTest.randomName() + '.com';
+        basicTest.inputClearer(this.inputLinkedInURL).inputFiller(this.inputLinkedInURL, this.LinkedInURL);
+        return this;
     }
-    
-    fillInputLocation() {
-        basicTest.inputFiller(this.inputLocation, 'updated_'+basicTest.randomName());
+
+    updateLocation() {
+        this.Location = 'updated_' + basicTest.randomName();
+        basicTest.inputClearer(this.inputLocation).inputFiller(this.inputLocation, this.Location);
+        return this;
     }
 
     clickSaveButton() {
-        basicTest.buttonClicker(this.buttonSave);
+        cy.contains(this.buttonSave).click();
+        return this;
     }
 
     clickEditProfilePhoto() {
         basicTest.buttonClicker(this.buttonEditProfilePhoto)
-    }    
+        return this;
+    }
+
+    checkWhetherUpdated() {
+        cy.contains("'"+this.EmailAddress+"'").
+            contains("'"+this.FirstName+"'").
+            contains("'"+this.JobTitle+"'").
+            contains("'"+this.Lastname+"'").
+            contains("'"+this.LinkedInURL+"'").
+            contains("'"+this.Location+"'").
+            contains("'"+this.Organisation+"'").
+            contains("'"+this.PhoneNumber+"'");
+        return this;
+    }
 }

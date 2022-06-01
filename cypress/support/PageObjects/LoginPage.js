@@ -11,19 +11,23 @@ class LoginPage {
      
 
     fillEmail() {
-        basicTest.inputFiller(this.inputEmail, Cypress.env('user_email'), { log: false });        
+        basicTest.inputFiller(this.inputEmail, Cypress.env('user_email'), { log: false });
+        return this;       
     }
 
     fillPassword() {
-        basicTest.inputFiller(this.inputPassword, Cypress.env('user_password'), { log: false });      
+        basicTest.inputFiller(this.inputPassword, Cypress.env('user_password'), { log: false });
+        return this;     
     }
 
     clickSignUpButton() {
         basicTest.buttonClicker(this.buttonSignUp);
+        return this;
     }
 
     clickSubmitButton() {
         basicTest.buttonClicker(this.buttonSubmit);
+        return this;
     }
 
     clickForgotPasswordLink() {
@@ -32,6 +36,7 @@ class LoginPage {
 
     fillEmailForRestorePassword() {
         basicTest.inputFiller(this.inputFirstName, Cypress.env('user_email'), { log: false });
+        return this;
     }
 
     clickResetPasswordButton() {
