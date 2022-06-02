@@ -1,5 +1,12 @@
 import { BasicTest } from '../BasicTest'
-const basicTest = new BasicTest();
+const basicTest = new BasicTest()
+
+var valueJobTitle = ''
+var valueLinkedInURL = ''
+var valueFirstName = ''
+var valueLastName = ''
+var valueCompany = ''
+var valueLocation = ''
 
 export class EditProfilePopup {
 
@@ -13,63 +20,55 @@ export class EditProfilePopup {
     inputLinkedInURL = '#linkedin_url';
     inputLocation = '#location';
     buttonSave = 'Save';
-    divDialog = '[role="dialog"]';
+    divDialog = '[role="dialog"]';   
 
-    /*CURRENT VALUES*/
-    FirstName;
-    Lastname;
-    JobTitle;
-    Organisation;
-    EmailAddress;
-    PhoneNumber;
-    LinkedInURL;
-    Location;
+
+    checkWhetherPopupClosed() {
+        let isClosed = new Boolean(cy.get(this.divDialog).should('not.exist'));
+        return isClosed;
+    }
 
     updateFirstName() {
-        this.FirstName = 'updated_' + basicTest.randomName();
-        basicTest.inputClearer(this.inputFirstName).inputFiller(this.inputFirstName, this.FirstName);        
+
+        valueFirstName = 'updated_' + basicTest.randomName();
+        basicTest.inputClearer(this.inputFirstName).inputFiller(this.inputFirstName, valueFirstName);
         return this;
     }
 
     updateLastname() {
-        this.Lastname = 'updated_' + basicTest.randomName();
-        basicTest.inputClearer(this.inputLastname).inputFiller(this.inputLastname, this.Lastname);
+        valueLastName = 'updated_' + basicTest.randomName();
+        basicTest.inputClearer(this.inputLastname).inputFiller(this.inputLastname, valueLastName);
         return this;
     }
 
     updateJobTitle() {
-        this.JobTitle = 'updated_' + basicTest.randomName();
-        basicTest.inputClearer(this.inputJobTitle).inputFiller(this.inputJobTitle, this.JobTitle);
+        valueJobTitle = 'updated_' + basicTest.randomName();
+        basicTest.inputClearer(this.inputJobTitle).inputFiller(this.inputJobTitle, valueJobTitle);
+        console.log(valueJobTitle)
         return this;
     }
 
     updateOrganisation() {
-        this.Organisation = 'updated_' + basicTest.randomName();
-        basicTest.inputClearer(this.inputOrganisation).inputFiller(this.inputOrganisation, this.Organisation);
-        return this;
-    }
-
-    updateEmailAddress() {
-        this.EmailAddress = 'updated_' + basicTest.randomName();
-        //basicTest.inputFiller(this.inputEmailAddress, 'updated_'+basicTest.randomName());
+        valueCompany = 'updated_' + basicTest.randomName();
+        basicTest.inputClearer(this.inputOrganisation).inputFiller(this.inputOrganisation, valueCompany);
         return this;
     }
 
     updatePhoneNumber() {
-        this.PhoneNumber = 987654321;
-        basicTest.inputClearer(this.inputPhoneNumber).inputFiller(this.inputPhoneNumber, this.PhoneNumber);
+        var valuePhoneNumber = '987654321';
+        basicTest.inputClearer(this.inputPhoneNumber).inputFiller(this.inputPhoneNumber, valuePhoneNumber);
         return this;
     }
 
     updateLinkedInURL() {
-        this.LinkedInURL = 'https://updated' + basicTest.randomName() + '.com';
-        basicTest.inputClearer(this.inputLinkedInURL).inputFiller(this.inputLinkedInURL, this.LinkedInURL);
+        valueLinkedInURL = 'https://updated' + basicTest.randomName() + '.com';
+        basicTest.inputClearer(this.inputLinkedInURL).inputFiller(this.inputLinkedInURL, valueLinkedInURL);
         return this;
     }
 
     updateLocation() {
-        this.Location = 'updated_' + basicTest.randomName();
-        basicTest.inputClearer(this.inputLocation).inputFiller(this.inputLocation, this.Location);
+        valueLocation = 'updated_' + basicTest.randomName();
+        basicTest.inputClearer(this.inputLocation).inputFiller(this.inputLocation, valueLocation);
         return this;
     }
 
@@ -81,5 +80,5 @@ export class EditProfilePopup {
     clickEditProfilePhoto() {
         basicTest.buttonClicker(this.buttonEditProfilePhoto)
         return this;
-    }    
+    }
 }

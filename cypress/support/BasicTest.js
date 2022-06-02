@@ -1,5 +1,3 @@
-import { isAssertionExpression } from "typescript";
-
 export class BasicTest {
 
     randomName() {

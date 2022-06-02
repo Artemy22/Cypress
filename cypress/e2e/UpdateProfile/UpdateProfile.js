@@ -1,7 +1,7 @@
 
 
 import  LoginPage from '../../support/PageObjects/LoginPage';
-import  ProfilePage from '../../support/PageObjects/ProfilePage'
+import { ProfilePage } from '../../support/PageObjects/ProfilePage'
 import { EditProfilePopup } from '../../support/PageObjects/EditProfilePopup'
 
 describe('Automation Test for the Updating profile', function () {
