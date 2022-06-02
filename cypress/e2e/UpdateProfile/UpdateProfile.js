@@ -39,6 +39,6 @@ describe('Automation Test for the Updating profile', function () {
     })
 
     Then('My profile became updated', () => {
-        editProfilePopup.checkWhetherUpdated();
+        profilePage.checkWhetherUpdated();
     })
 });

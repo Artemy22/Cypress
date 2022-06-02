@@ -4,15 +4,16 @@ const basicTest = new BasicTest();
 export class EditProfilePopup {
 
     /*LOCATORS*/
-    inputFirstName = '#firstName'
-    inputLastname = '#lastName'
-    inputJobTitle = '#job_title'
-    inputOrganisation = '#org_name'
-    inputEmailAddress = '#email'
-    inputPhoneNumber = '#phone'
-    inputLinkedInURL = '#linkedin_url'
-    inputLocation = '#location'
-    buttonSave = 'Save'
+    inputFirstName = '#firstName';
+    inputLastname = '#lastName';
+    inputJobTitle = '#job_title';
+    inputOrganisation = '#org_name';
+    inputEmailAddress = '#email';
+    inputPhoneNumber = '#phone';
+    inputLinkedInURL = '#linkedin_url';
+    inputLocation = '#location';
+    buttonSave = 'Save';
+    divDialog = '[role="dialog"]';
 
     /*CURRENT VALUES*/
     FirstName;
@@ -26,7 +27,7 @@ export class EditProfilePopup {
 
     updateFirstName() {
         this.FirstName = 'updated_' + basicTest.randomName();
-        basicTest.inputClearer(this.inputFirstName).inputFiller(this.inputFirstName, this.FirstName);
+        basicTest.inputClearer(this.inputFirstName).inputFiller(this.inputFirstName, this.FirstName);        
         return this;
     }
 
@@ -80,17 +81,5 @@ export class EditProfilePopup {
     clickEditProfilePhoto() {
         basicTest.buttonClicker(this.buttonEditProfilePhoto)
         return this;
-    }
-
-    checkWhetherUpdated() {
-        cy.contains("'"+this.EmailAddress+"'").
-            contains("'"+this.FirstName+"'").
-            contains("'"+this.JobTitle+"'").
-            contains("'"+this.Lastname+"'").
-            contains("'"+this.LinkedInURL+"'").
-            contains("'"+this.Location+"'").
-            contains("'"+this.Organisation+"'").
-            contains("'"+this.PhoneNumber+"'");
-        return this;
-    }
+    }    
 }
