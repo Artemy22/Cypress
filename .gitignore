@@ -1,2 +1,8 @@
 node_modules
 cypress.env.json
+cucumber-json/
+cucumber-report/
+.vscode/*
+package-lock.json
+package.json
+.vscode/settings.json

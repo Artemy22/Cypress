@@ -1,0 +1,82 @@
+[
+  {
+    "keyword": "Feature",
+    "name": "As a user I want to create my own account, without email checking",
+    "line": 1,
+    "id": "as-a-user-i-want-to-create-my-own-account,-without-email-checking",
+    "tags": [],
+    "uri": "AccountCreate.feature",
+    "elements": [
+      {
+        "id": "as-a-user-i-want-to-create-my-own-account,-without-email-checking;account-creation",
+        "keyword": "Scenario",
+        "line": 3,
+        "name": "Account creation",
+        "tags": [],
+        "type": "scenario",
+        "steps": [
+          {
+            "arguments": [],
+            "keyword": "Given ",
+            "line": 4,
+            "name": "I navigate to the login page",
+            "result": {
+              "status": "passed",
+              "duration": 2437000000
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "When ",
+            "line": 5,
+            "name": "I click on the Sign Up button",
+            "result": {
+              "status": "passed",
+              "duration": 213000000
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "And ",
+            "line": 6,
+            "name": "I'm directed to the Create your DFX account page",
+            "result": {
+              "status": "passed",
+              "duration": 156000000
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "Then ",
+            "line": 7,
+            "name": "I fill out all mandatory fields",
+            "result": {
+              "status": "passed",
+              "duration": 3425000000
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "And ",
+            "line": 8,
+            "name": "Click on the Submit button",
+            "result": {
+              "status": "passed",
+              "duration": 143000000
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "Then ",
+            "line": 9,
+            "name": "I'm directed to the Verification page",
+            "result": {
+              "status": "passed",
+              "duration": 3129000000
+            }
+          }
+        ]
+      }
+    ]
+  }
+]

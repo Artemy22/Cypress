@@ -8,7 +8,7 @@
   "compile-hero.disable-compile-files-on-did-save-code": true,
 
   "cucumberautocomplete.steps": [
-    "cypress/integration/**/*.js",
+    "cypress/e2e/**/*.js",
 ],
 
 "cucumberautocomplete.strictGherkinCompletion": true,
@@ -16,6 +16,6 @@
     "other": true,
     "comments": false,
     "strings": true
-}
-}
-
+    }
+  }
+  

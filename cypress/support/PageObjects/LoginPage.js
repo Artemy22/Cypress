@@ -1,39 +1,54 @@
+import { BasicTest } from '../BasicTest'
+const basicTest = new BasicTest();
 class LoginPage {
 
 
      inputEmail = '#email';
      inputPassword = '#password';
-     buttonSignUp = '.css-15ry5xc';
+     buttonSignUp = '.css-1t999mf > .css-15ry5xc'
      buttonSubmit = '.css-1grsw4x';
      buttonForgotPassword = '.css-jxm41c > .css-15ry5xc';
      
 
     fillEmail() {
-        return cy.get(this.inputEmail).type(Cypress.env('user_email'), { log: false });
+        basicTest.inputFiller(this.inputEmail, Cypress.env('user_email'), { log: false });
+        return this;       
     }
+
     fillPassword() {
-        return cy.get(this.inputPassword).type(Cypress.env('user_password'), { log: false });
+        basicTest.inputFiller(this.inputPassword, Cypress.env('user_password'), { log: false });
+        return this;     
     }
+
     clickSignUpButton() {
-        return cy.get(this.buttonSignUp).click();
+        basicTest.buttonClicker(this.buttonSignUp);
+        return this;
     }
+
     clickSubmitButton() {
-        return cy.get(this.buttonSubmit).click();
+        basicTest.buttonClicker(this.buttonSubmit);
+        return this;
     }
+
     clickForgotPasswordLink() {
-        return cy.get().click();
+        // !TODO
     }
+
     fillEmailForRestorePassword() {
-        return cy.get().type(Cypress.env('user_email'));
+        basicTest.inputFiller(this.inputFirstName, Cypress.env('user_email'), { log: false });
+        return this;
     }
+
     clickResetPasswordButton() {
-        return cy.get().click();
+        // !TODO
     }
+
     clickDoneButtonOnConfirmationPage(){
-        return cy.get().click();
+        // !TODO
     }
+
     isOnConfirmationPage(){
-        return cy.contains();
+        // !TODO
     }    
 }
 export default LoginPage
