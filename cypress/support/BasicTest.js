@@ -1,3 +1,4 @@
+let arrayToCheck = [];
 export class BasicTest {
 
     randomName() {
@@ -24,4 +25,16 @@ export class BasicTest {
         cy.get(input).clear();
         return this;
     }
+
+    /*  TO REFACTOR
+    inputTextGetter(element, indexToReturn) {
+        let txt = '';
+        cy.get(element).then(($text) => {
+            txt = $text.text()
+            arrayToCheck.push(txt)
+            console.log("ARRAY from BASICTest -> "+arrayToCheck[0])
+        })
+        return arrayToCheck[indexToReturn];
+    }
+    */ 
 }

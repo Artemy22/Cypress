@@ -1,12 +1,13 @@
 import { BasicTest } from '../BasicTest'
 const basicTest = new BasicTest()
 
-var valueJobTitle = ''
-var valueLinkedInURL = ''
-var valueFirstName = ''
-var valueLastName = ''
-var valueCompany = ''
-var valueLocation = ''
+let valueJobTitle = ''
+let valueLinkedInURL = ''
+let valueFirstName = ''
+let valueLastName = ''
+let valueCompany = ''
+let valueLocation = ''
+let valueToCheck = [];
 
 export class EditProfilePopup {
 
@@ -20,7 +21,11 @@ export class EditProfilePopup {
     inputLinkedInURL = '#linkedin_url';
     inputLocation = '#location';
     buttonSave = 'Save';
-    divDialog = '[role="dialog"]';   
+    divDialog = '[role="dialog"]';
+
+    getValueJobTitle(index) {
+        return valueToCheck[index];
+    }
 
 
     checkWhetherPopupClosed() {
@@ -42,14 +47,13 @@ export class EditProfilePopup {
     }
 
     updateJobTitle() {
-        valueJobTitle = 'updated_' + basicTest.randomName();
+        valueToCheck.push(valueJobTitle = 'updated_' + basicTest.randomName())
         basicTest.inputClearer(this.inputJobTitle).inputFiller(this.inputJobTitle, valueJobTitle);
-        console.log(valueJobTitle)
         return this;
     }
 
     updateOrganisation() {
-        valueCompany = 'updated_' + basicTest.randomName();
+        valueToCheck.push(valueCompany = 'updated_' + basicTest.randomName());
         basicTest.inputClearer(this.inputOrganisation).inputFiller(this.inputOrganisation, valueCompany);
         return this;
     }
@@ -61,13 +65,13 @@ export class EditProfilePopup {
     }
 
     updateLinkedInURL() {
-        valueLinkedInURL = 'https://updated' + basicTest.randomName() + '.com';
+        valueToCheck.push(valueLinkedInURL = 'https://updated' + basicTest.randomName() + '.com');
         basicTest.inputClearer(this.inputLinkedInURL).inputFiller(this.inputLinkedInURL, valueLinkedInURL);
         return this;
     }
 
     updateLocation() {
-        valueLocation = 'updated_' + basicTest.randomName();
+        valueToCheck.push(valueLocation = 'updated_' + basicTest.randomName());
         basicTest.inputClearer(this.inputLocation).inputFiller(this.inputLocation, valueLocation);
         return this;
     }
@@ -80,5 +84,9 @@ export class EditProfilePopup {
     clickEditProfilePhoto() {
         basicTest.buttonClicker(this.buttonEditProfilePhoto)
         return this;
+    }
+
+    getValueJobTitle(index) {
+        return valueToCheck[index];
     }
 }
