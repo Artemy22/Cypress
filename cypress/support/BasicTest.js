@@ -22,8 +22,13 @@ export class BasicTest {
     }
 
     inputClearer(input) {
-        cy.get(input).clear();
+        cy.get(input).clear();        
         return this;
+    }
+
+    fileUploader(chooseFileButton, fileName) {
+        cy.get(chooseFileButton)
+        .attachFile(fileName);
     }
 
     /*  TO REFACTOR
