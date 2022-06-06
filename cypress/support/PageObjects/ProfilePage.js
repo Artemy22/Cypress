@@ -2,7 +2,8 @@ import { EditProfilePopup } from '../../support/PageObjects/EditProfilePopup'
 import { BasicTest } from '../BasicTest';
 const editProfilePopup = new EditProfilePopup;
 const basicTest = new BasicTest;
-let fileRandomizer = '';
+let startDate = '';
+
 
 export class ProfilePage {
     locatorDropDownUser = '.css-b4y3aj';
@@ -59,19 +60,17 @@ export class ProfilePage {
 
     clickSubmitOnUploadPhotoPopup() {
         basicTest.buttonClicker(this.uploadPhotoPopupSubmitButton);
+        var currentDate = new Date();        
+        startDate = currentDate.getTime();
         return this;
     }
 
     fileUploaderProfilePicture() {
         var currentDate = new Date();
         if ((currentDate.getSeconds() % 2 == 0) == true) {
-            cy.get(this.uploadPhotoPopupChooseFileButton)
-                .attachFile("test1.png");
-            cy.log(currentDate.getSeconds())
+            basicTest.fileUploader(this.uploadPhotoPopupChooseFileButton, "test1.png")            
         } else {
-            cy.get(this.uploadPhotoPopupChooseFileButton)
-                .attachFile("photo.jpg");
-            cy.log(currentDate.getSeconds())
+            basicTest.fileUploader(this.uploadPhotoPopupChooseFileButton, "photo.jpg")            
         }
     }
 
@@ -82,6 +81,8 @@ export class ProfilePage {
         if (Cypress.$('Upload your profile photo').isDisplayed) {
             throw console.error("The popup is still displayed");
         } else {
+            var currentDate = new Date();
+            cy.log("Picture uploading took about: "+(currentDate.getTime() - startDate)/1000 + "s");
             this.clickDropDownUser().clickButtonSignOut();
         }
     }
