@@ -23,6 +23,9 @@ export class EditProfilePopup {
     buttonSave = 'Save';
     divDialog = '[role="dialog"]';
 
+
+
+
     getValueJobTitle(index) {
         return valueToCheck[index];
     }
@@ -89,4 +92,5 @@ export class EditProfilePopup {
     getValueJobTitle(index) {
         return valueToCheck[index];
     }
+
 }
