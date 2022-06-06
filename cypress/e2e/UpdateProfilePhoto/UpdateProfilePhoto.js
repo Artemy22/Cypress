@@ -33,6 +33,6 @@ describe('As a user I want to get my profile photo to be updated', function () {
     })
 
     Then('My profile became updated', () => {
-        //profilePage.checkWhetherUpdated();
+        profilePage.checkWhetherPhotoUploaded();
     })
 });

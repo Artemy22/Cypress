@@ -18,9 +18,6 @@ export class ProfilePage {
     uploadPhotoPopupChooseFileButton = '[name="fileUpload"]';
     uploadPhotoPopupSubmitButton = '[class="css-8arwz3"]'; // contains
 
-
-
-
     /* CURRENT VALUES */
     _valueFirstName;
     _valueLastName;
@@ -75,6 +72,17 @@ export class ProfilePage {
             cy.get(this.uploadPhotoPopupChooseFileButton)
                 .attachFile("photo.jpg");
             cy.log(currentDate.getSeconds())
+        }
+    }
+
+    checkWhetherPhotoUploaded() {
+        /*
+        Temporary decision: checking only whether the popup is closed after uploading
+        */
+        if (Cypress.$('Upload your profile photo').isDisplayed) {
+            throw console.error("The popup is still displayed");
+        } else {
+            this.clickDropDownUser().clickButtonSignOut();
         }
     }
 }
