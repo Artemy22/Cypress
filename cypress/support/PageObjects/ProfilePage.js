@@ -17,7 +17,21 @@ export class ProfilePage {
     locatorLinkedin = ':nth-child(6) > .css-1bzz5bn';
     addPhotoPlusButton = '.css-buceqx';
     uploadPhotoPopupChooseFileButton = '[name="fileUpload"]';
-    uploadPhotoPopupSubmitButton = '[class="css-8arwz3"]'; // contains
+    uploadPhotoPopupSubmitButton = '[class="css-8arwz3"]';
+
+    /*INTERESTS SECTION*/
+    divInterests = ':nth-child(1) > .css-khnrw0';
+    buttonInterestsSoftwareEngineering = '[id="profile-interest-0"]';
+    buttonInterestsDataScience = '[id="profile-interest-1"]';
+    buttonInterestsCloudEngineering = '[id="profile-interest-2"]';
+
+    /*CHALLENGES SECTION*/
+    divChallenges = ':nth-child(3) > .css-khnrw0';
+    buttonChallengesImprovingDiversity = '[id="profile-challenge-0"]';
+    buttonChallengesReducingSpend = '[id="profile-challenge-1"]';
+    buttonChallengesAttractingTalent = '[id="profile-challenge-2"]';
+
+    buttonInterestsChallengesSave = '.css-1x4nq2r';
 
     /* CURRENT VALUES */
     _valueFirstName;
@@ -60,7 +74,7 @@ export class ProfilePage {
 
     clickSubmitOnUploadPhotoPopup() {
         basicTest.buttonClicker(this.uploadPhotoPopupSubmitButton);
-        var currentDate = new Date();        
+        var currentDate = new Date();
         startDate = currentDate.getTime();
         return this;
     }
@@ -68,9 +82,9 @@ export class ProfilePage {
     fileUploaderProfilePicture() {
         var currentDate = new Date();
         if ((currentDate.getSeconds() % 2 == 0) == true) {
-            basicTest.fileUploader(this.uploadPhotoPopupChooseFileButton, "test1.png")            
+            basicTest.fileUploader(this.uploadPhotoPopupChooseFileButton, "test1.png")
         } else {
-            basicTest.fileUploader(this.uploadPhotoPopupChooseFileButton, "photo.jpg")            
+            basicTest.fileUploader(this.uploadPhotoPopupChooseFileButton, "photo.jpg")
         }
     }
 
@@ -82,8 +96,73 @@ export class ProfilePage {
             throw console.error("The popup is still displayed");
         } else {
             var currentDate = new Date();
-            cy.log("Picture uploading took about: "+(currentDate.getTime() - startDate)/1000 + "s");
+            cy.log("Picture uploading took about: " + (currentDate.getTime() - startDate) / 1000 + "s");
             this.clickDropDownUser().clickButtonSignOut();
+        }
+    }
+
+    clickButtonInterestsSoftwareEngineering() {
+        if (cy.contains('Your profile').should('be.visible')) {
+            basicTest.buttonClicker(this.buttonInterestsSoftwareEngineering);
+            return this;
+        }
+    }
+
+    clickButtonInterestsDataScience() {
+        if (cy.contains('Your profile')) {
+            basicTest.buttonClicker(this.buttonInterestsDataScience);
+            return this;
+        }
+    }
+
+    clickButtonInterestsCloudEngineering() {
+        if (cy.contains('Your profile')) {
+            basicTest.buttonClicker(this.buttonInterestsCloudEngineering);
+            return this;
+        }
+    }
+
+    clickButtonChallengesImprovingDiversity() {
+        if (cy.contains('Your profile')) {
+            basicTest.buttonClicker(this.buttonChallengesImprovingDiversity);
+            return this;
+        }
+    }
+
+    clickButtonChallengesReducingSpend() {
+        if (cy.contains('Your profile')) {
+            basicTest.buttonClicker(this.buttonChallengesReducingSpend);
+            return this;
+        }
+    }
+
+    clickButtonChallengesAttractingTalent() {
+        if (cy.contains('Your profile')) {
+            basicTest.buttonClicker(this.buttonChallengesAttractingTalent);
+            return this;
+        }
+    }
+
+    clickButtonInterestsChallengesSave() {
+        basicTest.buttonClicker(this.buttonInterestsChallengesSave);
+        return this;
+    }
+
+    checkWhetherInterestsChosen() {
+        if (cy.contains('Your profile')) {
+            return basicTest.checkWhetherInterestsChallengesChosen(
+                this.buttonInterestsCloudEngineering,
+                this.buttonInterestsSoftwareEngineering,
+                this.buttonInterestsDataScience)
+        }
+    }
+
+    checkWhetherChallengesChosen() {
+        if (cy.contains('Your profile')) {
+            return basicTest.checkWhetherInterestsChallengesChosen(
+                this.buttonChallengesAttractingTalent,
+                this.buttonChallengesImprovingDiversity,
+                this.buttonChallengesReducingSpend)
         }
     }
 }

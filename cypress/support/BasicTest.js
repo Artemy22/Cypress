@@ -16,19 +16,27 @@ export class BasicTest {
     }
 
     buttonClicker(button) {
-        cy.get(button).click();
+        cy.get(button).click({ force: true });
         return this;
 
     }
 
     inputClearer(input) {
-        cy.get(input).clear();        
+        cy.get(input).clear();
         return this;
     }
 
     fileUploader(chooseFileButton, fileName) {
         cy.get(chooseFileButton)
-        .attachFile(fileName);
+            .attachFile(fileName);
+    }
+
+    checkWhetherInterestsChallengesChosen() {   //infinite number of arguments
+        cy.reload().then(() => { 
+            for (var i = 0; i < arguments.length; i++) {    
+                return cy.get(arguments[i]).should('have.attr', 'checked')
+            }
+        })
     }
 
     /*  TO REFACTOR
@@ -41,5 +49,5 @@ export class BasicTest {
         })
         return arrayToCheck[indexToReturn];
     }
-    */ 
+    */
 }
