@@ -1,8 +1,7 @@
-import { sortAndDeduplicateDiagnostics } from 'typescript';
 import LoginPage from '../../support/PageObjects/LoginPage';
 import { ProfilePage } from '../../support/PageObjects/ProfilePage'
 
-describe('Basic Steps to avoid dupes', () => {
+describe('Unselect Interests and Challenges', () => {
     const loginPage = new LoginPage;
     const profilePage = new ProfilePage;
 
@@ -28,12 +27,12 @@ describe('Basic Steps to avoid dupes', () => {
     })
 
     Then('Interests and Challenges are unselected', () => {
-        if (!profilePage.checkWhetherInterestsChosen() && !profilePage.checkWhetherChallengesChosen()) {
+        if ((profilePage.checkWhetherInterestsNotChosen() && profilePage.checkWhetherChallengesNotChosen())) {
             cy.log('INTERESTS AND CHALLANGES ARE UNSELECTED SUCCESSFULLY');
         } else cy.log('!ERROR! \n INTERESTS AND CHALLANGES ARE STILL CHOSEN');
     })
 
     And('Then Sign out', () => {
-        profilePage.clickDropDownUser().clickButtonSignOut();
+        //profilePage.clickDropDownUser().clickButtonSignOut();
     })
 });

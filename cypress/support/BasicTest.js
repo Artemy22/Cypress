@@ -32,12 +32,22 @@ export class BasicTest {
     }
 
     checkWhetherInterestsChallengesChosen() {   //infinite number of arguments
-        cy.reload().then(() => { 
-            for (var i = 0; i < arguments.length; i++) {    
+        cy.reload().then(() => {
+            for (var i = 0; i < arguments.length; i++) {
                 return cy.get(arguments[i]).should('have.attr', 'checked')
             }
         })
     }
+
+    checkWhetherInterestsChallengesNotChosen() {   //infinite number of arguments
+        cy.reload().then(() => {
+            for (var i = 0; i < arguments.length; i++) {
+                return cy.get(arguments[i]).invoke('attr', 'checked')
+                    .should('not.exist')
+            }
+        })
+    }
+
 
     /*  TO REFACTOR
     inputTextGetter(element, indexToReturn) {

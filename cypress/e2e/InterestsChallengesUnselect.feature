@@ -1,3 +1,5 @@
+Feature: As a user I want to unselect my keys of Interests and Challenges chosen before
+
 Scenario: Unselect Interests and Challenges
     Given User is logged in to the system
     When I unselect first 3 Interests 

@@ -21,15 +21,15 @@ export class ProfilePage {
 
     /*INTERESTS SECTION*/
     divInterests = ':nth-child(1) > .css-khnrw0';
-    buttonInterestsSoftwareEngineering = '[id="profile-interest-0"]';
-    buttonInterestsDataScience = '[id="profile-interest-1"]';
-    buttonInterestsCloudEngineering = '[id="profile-interest-2"]';
+    buttonInterestsSoftwareEngineering = '#profile-interest-0';
+    buttonInterestsDataScience = '#profile-interest-1';
+    buttonInterestsCloudEngineering = '#profile-interest-2';
 
     /*CHALLENGES SECTION*/
     divChallenges = ':nth-child(3) > .css-khnrw0';
-    buttonChallengesImprovingDiversity = '[id="profile-challenge-0"]';
-    buttonChallengesReducingSpend = '[id="profile-challenge-1"]';
-    buttonChallengesAttractingTalent = '[id="profile-challenge-2"]';
+    buttonChallengesImprovingDiversity = '#profile-challenge-0';
+    buttonChallengesReducingSpend = '#profile-challenge-1';
+    buttonChallengesAttractingTalent = '#profile-challenge-2';
 
     buttonInterestsChallengesSave = '.css-1x4nq2r';
 
@@ -102,7 +102,7 @@ export class ProfilePage {
     }
 
     clickButtonInterestsSoftwareEngineering() {
-        if (cy.contains('Your profile').should('be.visible')) {
+        if (cy.contains('Your profile')) {
             basicTest.buttonClicker(this.buttonInterestsSoftwareEngineering);
             return this;
         }
@@ -149,7 +149,7 @@ export class ProfilePage {
     }
 
     checkWhetherInterestsChosen() {
-        if (cy.contains('Your profile').should('be.visible')) {
+        if (cy.get(this.divInterests).should('be.visible')) {
             return basicTest.checkWhetherInterestsChallengesChosen(
                 this.buttonInterestsCloudEngineering,
                 this.buttonInterestsSoftwareEngineering,
@@ -158,8 +158,26 @@ export class ProfilePage {
     }
 
     checkWhetherChallengesChosen() {
-        if (cy.contains('Your profile').should('be.visible')) {
+        if (cy.contains('Your profile')) {
             return basicTest.checkWhetherInterestsChallengesChosen(
+                this.buttonChallengesAttractingTalent,
+                this.buttonChallengesImprovingDiversity,
+                this.buttonChallengesReducingSpend)
+        }
+    }
+
+    checkWhetherInterestsNotChosen() {
+        if (cy.contains('Your profile')) {
+            return basicTest.checkWhetherInterestsChallengesNotChosen(
+                this.buttonInterestsCloudEngineering,
+                this.buttonInterestsSoftwareEngineering,
+                this.buttonInterestsDataScience)
+        }
+    }
+
+    checkWhetherChallengesNotChosen() {
+        if (cy.contains('Your profile')) {
+            return basicTest.checkWhetherInterestsChallengesNotChosen(
                 this.buttonChallengesAttractingTalent,
                 this.buttonChallengesImprovingDiversity,
                 this.buttonChallengesReducingSpend)
