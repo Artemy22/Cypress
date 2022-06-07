@@ -149,7 +149,7 @@ export class ProfilePage {
     }
 
     checkWhetherInterestsChosen() {
-        if (cy.contains('Your profile')) {
+        if (cy.contains('Your profile').should('be.visible')) {
             return basicTest.checkWhetherInterestsChallengesChosen(
                 this.buttonInterestsCloudEngineering,
                 this.buttonInterestsSoftwareEngineering,
@@ -158,7 +158,7 @@ export class ProfilePage {
     }
 
     checkWhetherChallengesChosen() {
-        if (cy.contains('Your profile')) {
+        if (cy.contains('Your profile').should('be.visible')) {
             return basicTest.checkWhetherInterestsChallengesChosen(
                 this.buttonChallengesAttractingTalent,
                 this.buttonChallengesImprovingDiversity,
