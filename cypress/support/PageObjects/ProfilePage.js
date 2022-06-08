@@ -102,42 +102,42 @@ export class ProfilePage {
     }
 
     clickButtonInterestsSoftwareEngineering() {
-        if (cy.contains('Your profile')) {
+        if (cy.contains('Your profile').should('be.visible')) {
             basicTest.buttonClicker(this.buttonInterestsSoftwareEngineering);
             return this;
         }
     }
 
     clickButtonInterestsDataScience() {
-        if (cy.contains('Your profile')) {
+        if (cy.contains('Your profile').should('be.visible')) {
             basicTest.buttonClicker(this.buttonInterestsDataScience);
             return this;
         }
     }
 
     clickButtonInterestsCloudEngineering() {
-        if (cy.contains('Your profile')) {
+        if (cy.contains('Your profile').should('be.visible')) {
             basicTest.buttonClicker(this.buttonInterestsCloudEngineering);
             return this;
         }
     }
 
     clickButtonChallengesImprovingDiversity() {
-        if (cy.contains('Your profile')) {
+        if (cy.contains('Your profile').should('be.visible')) {
             basicTest.buttonClicker(this.buttonChallengesImprovingDiversity);
             return this;
         }
     }
 
     clickButtonChallengesReducingSpend() {
-        if (cy.contains('Your profile')) {
+        if (cy.contains('Your profile').should('be.visible')) {
             basicTest.buttonClicker(this.buttonChallengesReducingSpend);
             return this;
         }
     }
 
     clickButtonChallengesAttractingTalent() {
-        if (cy.contains('Your profile')) {
+        if (cy.contains('Your profile').should('be.visible')) {
             basicTest.buttonClicker(this.buttonChallengesAttractingTalent);
             return this;
         }
@@ -158,7 +158,7 @@ export class ProfilePage {
     }
 
     checkWhetherChallengesChosen() {
-        if (cy.contains('Your profile')) {
+        if (cy.contains('Your profile').should('be.visible')) {
             return basicTest.checkWhetherInterestsChallengesChosen(
                 this.buttonChallengesAttractingTalent,
                 this.buttonChallengesImprovingDiversity,
@@ -167,16 +167,16 @@ export class ProfilePage {
     }
 
     checkWhetherInterestsNotChosen() {
-        if (cy.contains('Your profile')) {
+        if (cy.contains('Your profile').should('be.visible')) {
             return basicTest.checkWhetherInterestsChallengesNotChosen(
                 this.buttonInterestsCloudEngineering,
                 this.buttonInterestsSoftwareEngineering,
-                this.buttonInterestsDataScience)
+                this.buttonInterestsDataScience);
         }
     }
 
     checkWhetherChallengesNotChosen() {
-        if (cy.contains('Your profile')) {
+        if (cy.contains('Your profile').should('be.visible')) {
             return basicTest.checkWhetherInterestsChallengesNotChosen(
                 this.buttonChallengesAttractingTalent,
                 this.buttonChallengesImprovingDiversity,

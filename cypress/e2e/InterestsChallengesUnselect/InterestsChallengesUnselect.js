@@ -8,12 +8,17 @@ describe('Unselect Interests and Challenges', () => {
     Given('User is logged in to the system', () => {
         cy.visit(Cypress.env('base_url')).contains('Sign in to DFX');
         loginPage.fillEmail().fillPassword().clickSubmitButton();
+        cy.contains('Your profile').should('be.visible')
     })
 
     When('I unselect first 3 Interests', () => {
         if (profilePage.checkWhetherInterestsChosen) {
             profilePage.clickButtonInterestsSoftwareEngineering().clickButtonInterestsDataScience().clickButtonInterestsCloudEngineering();
         } else throw Error('Interests are still CHOSEN')
+    })
+
+    Then('I click on the Save button to save my changes', () => {
+        profilePage.clickButtonInterestsChallengesSave();
     })
 
     Then('I unselect first 3 Challenges', () => {
@@ -27,12 +32,11 @@ describe('Unselect Interests and Challenges', () => {
     })
 
     Then('Interests and Challenges are unselected', () => {
-        if ((profilePage.checkWhetherInterestsNotChosen() && profilePage.checkWhetherChallengesNotChosen())) {
-            cy.log('INTERESTS AND CHALLANGES ARE UNSELECTED SUCCESSFULLY');
-        } else cy.log('!ERROR! \n INTERESTS AND CHALLANGES ARE STILL CHOSEN');
+        profilePage.checkWhetherInterestsNotChosen();
+        profilePage.checkWhetherChallengesNotChosen()
     })
 
     And('Then Sign out', () => {
-        //profilePage.clickDropDownUser().clickButtonSignOut();
+        profilePage.clickDropDownUser().clickButtonSignOut();
     })
 });
