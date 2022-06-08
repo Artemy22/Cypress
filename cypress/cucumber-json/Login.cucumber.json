@@ -22,7 +22,7 @@
             "name": "I navigate to the login page",
             "result": {
               "status": "passed",
-              "duration": 797000000
+              "duration": 1864000000
             }
           },
           {
@@ -32,7 +32,7 @@
             "name": "I enter credentials",
             "result": {
               "status": "passed",
-              "duration": 984000000
+              "duration": 1322000000
             }
           },
           {
@@ -42,7 +42,7 @@
             "name": "Click on the Login bnt",
             "result": {
               "status": "passed",
-              "duration": 103000000
+              "duration": 177000000
             }
           },
           {
@@ -51,8 +51,9 @@
             "line": 7,
             "name": "My user is logged in",
             "result": {
-              "status": "passed",
-              "duration": 1763000000
+              "status": "failed",
+              "duration": 15048000000,
+              "error_message": "AssertionError: Timed out retrying after 15000ms: Expected to find content: 'Your profile' but never did.\n    at Context.eval (https://dfx.digitalfutures.com/__cypress/tests?p=cypress\\e2e\\Login.feature:57:8)\n    at Context.resolveAndRunStepDefinition (https://dfx.digitalfutures.com/__cypress/tests?p=cypress\\e2e\\Login.feature:20468:29)\n    at Context.eval (https://dfx.digitalfutures.com/__cypress/tests?p=cypress\\e2e\\Login.feature:19789:35)"
             }
           }
         ]

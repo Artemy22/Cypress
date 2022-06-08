@@ -7,6 +7,7 @@ let startDate = '';
 
 export class ProfilePage {
     locatorDropDownUser = '.css-b4y3aj';
+    locatorAccountSettings = 'Account settings';
     buttonSignOut = '[href="/sign-out"]';
     buttonEditProfile = '.css-59wuf6';
     locatorFirstAndLastNames = '.css-1leenta';
@@ -52,6 +53,10 @@ export class ProfilePage {
     clickButtonEditProfile() {
         cy.get(this.buttonEditProfile).click();
         return this;
+    }
+
+    clickUSerDropDownAccountSettings() {
+        cy.contains(this.locatorAccountSettings).click();
     }
 
     checkWhetherUpdated() {
@@ -182,5 +187,10 @@ export class ProfilePage {
                 this.buttonChallengesImprovingDiversity,
                 this.buttonChallengesReducingSpend)
         }
+    }
+
+    signOut() {
+        this.clickDropDownUser().clickButtonSignOut();
+        return this;
     }
 }
