@@ -30,7 +30,6 @@ export class EditProfilePopup {
         return valueToCheck[index];
     }
 
-
     checkWhetherPopupClosed() {
         let isClosed = new Boolean(cy.get(this.divDialog).should('not.exist'));
         return isClosed;
