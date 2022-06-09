@@ -21,6 +21,11 @@ class LoginPage {
         return this;
     }
 
+    fillTemporaryPassword() {
+        basicTest.inputFiller(this.inputPassword, Cypress.env('temporaryPassword'), { log: false });
+        return this;
+    }
+
     clickSignUpButton() {
         basicTest.buttonClicker(this.buttonSignUp);
         return this;

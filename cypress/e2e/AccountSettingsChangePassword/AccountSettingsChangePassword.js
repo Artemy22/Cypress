@@ -18,30 +18,34 @@ describe('Basic Steps to avoid dupes', () => {
     })
 
     Then('I fill the Change Password input out', () => {
-
+        accountSettingsPage.fillInputChangePassword();
     })
 
     Then('I fill the Confirm Password input out', () => {
-
+        accountSettingsPage.fillInputConfirmPassword();
     })
 
     When('I click on the Submit button', () => {
-
+        accountSettingsPage.clickOnTheSubmitPasswordChangingButton();
     })
 
     Then('I see the message "Password successfully updated."', () => {
-
+        accountSettingsPage.checkWetherPasswordChanged();
     })
 
     Then('Then Sign out', () => {
-
+        profilePage.signOut();
     })
 
     When('I use the newly created password to be logged in', () => {
+        loginPage.fillEmail().fillTemporaryPassword().clickSubmitButton();
+    })
 
+    Then('I restore the default password to avoid existing tests to be failed', () => {
+        accountSettingsPage.restoreDefaultPassword();
     })
 
     Then('I\'m logged in', () => {
-
+        profilePage.checkWhetherProfilePageLoaded().clickDropDownUser().clickUSerDropDownAccountSettings();        
     })
 })

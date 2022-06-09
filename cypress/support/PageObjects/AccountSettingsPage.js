@@ -46,7 +46,6 @@ export class AccountSettingsPage {
         basicTest.inputFiller(this.inputChangePassword, Cypress.env('user_password'));
         basicTest.inputFiller(this.inputConfirmPassword, Cypress.env('user_password'));
         basicTest.buttonClicker(this.buttonSubmitPasswordChanging);
-        cy.contains(this.successMessage).should('be.visible');
-        profilePage.signOut();
+        cy.contains(this.successMessage).should('be.visible');        
     }
 }

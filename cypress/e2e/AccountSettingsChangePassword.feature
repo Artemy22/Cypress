@@ -10,4 +10,5 @@ Scenario: The Password changing flow
     And Then Sign out
     When I use the newly created password to be logged in
     Then I'm logged in
+    And I restore the default password to avoid existing tests to be failed
     And Then Sign out
