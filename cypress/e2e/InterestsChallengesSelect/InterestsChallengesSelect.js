@@ -2,7 +2,7 @@ import { sortAndDeduplicateDiagnostics } from 'typescript';
 import LoginPage from '../../support/PageObjects/LoginPage';
 import { ProfilePage } from '../../support/PageObjects/ProfilePage'
 
-describe('Basic Steps to avoid dupes', () => {
+describe('Select Interests and Challenges', () => {
     const loginPage = new LoginPage;
     const profilePage = new ProfilePage;
 
