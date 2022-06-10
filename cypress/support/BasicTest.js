@@ -20,7 +20,7 @@ export class BasicTest {
     }
 
     buttonClickerWithContains(containsElement) {
-        cy.con(containsElement).click({ force: true });
+        cy.contains(containsElement).click({ force: true });
         return this;
     }
 
@@ -54,9 +54,9 @@ export class BasicTest {
         cy.contains(pageElement).should('be.visible')
     }
 
-    dropDownSeelctor(dropDownName, index, value) {
-        cy.get(dropDownName).select(index).should('have.value', `${value}`);
-        return this;document.querySelector
+    dropDownSelector(dropDownName, index, expectedValue) {
+        cy.get(dropDownName).select(index).should('have.value', expectedValue);  
+        return this;
         //cy.get('select').select('apples').should('have.value', '456')
         //cy.get('select').select(0).should('have.value', '456')
     }

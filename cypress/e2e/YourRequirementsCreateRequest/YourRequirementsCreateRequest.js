@@ -24,6 +24,7 @@ describe('Basic Steps to avoid dupes', () => {
     })
 
     When('I fill all mandatory fields out', () => {
+        yourRequirements.fillOutNumberOfRolesDropDown();
     })
 
     Then('I click on Create request button', () => {

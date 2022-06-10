@@ -4,6 +4,7 @@ import { ProfilePage } from './ProfilePage';
 const editProfilePopup = new EditProfilePopup;
 const basicTest = new BasicTest;
 const profilePage = new ProfilePage;
+let currentDay = new Date().getDate();
 
 export class YourRequirementsPage {
 
@@ -24,12 +25,12 @@ export class YourRequirementsPage {
 
     createRequestPopup = {
         dropDowns: {
-            numberOfRolesRequired: '#disciplineRequirements\.0\.staff_count',
-            numberOfRolesToInterview: '#disciplineRequirements\.0\.interview_count',
-            location: '#disciplineRequirements\.0\.location',
-            startDate: '#disciplineRequirements\.0\.start_date',
-            duration: '#disciplineRequirements\.0\.duration',
-            budgetApproved: '#disciplineRequirements\.0\.budget_status'
+            numberOfRolesRequired: '#disciplineRequirements\\.0\\.staff_count',
+            numberOfRolesToInterview: '#disciplineRequirements\\.0\\.interview_count',
+            location: '#disciplineRequirements\\.0\\.location',
+            startDate: '#disciplineRequirements\\.0\\.start_date',
+            duration: '#disciplineRequirements\\.0\\.duration',
+            budgetApproved: '#disciplineRequirements\\.0\\.budget_status'
         },
         inputPreferredAttributes: '#disciplineRequirements\.0\.tech_needs'
     };
@@ -62,5 +63,15 @@ export class YourRequirementsPage {
     clickDisciplineButtonCloudEngineering() {
         basicTest.buttonClickerWithContains(this.buttons.cloudEngineering);
         return this;
+    }
+
+    fillOutNumberOfRolesDropDown() {
+
+        basicTest.dropDownSelector(this.createRequestPopup.dropDowns.numberOfRolesRequired, 1, 3)
+            .dropDownSelector(this.createRequestPopup.dropDowns.numberOfRolesToInterview, 3, 5)
+            .dropDownSelector(this.createRequestPopup.dropDowns.location, 1, 'London')
+            .dropDownSelector(this.createRequestPopup.dropDowns.startDate, 2, '2022-08-' + currentDay)
+            .dropDownSelector(this.createRequestPopup.dropDowns.duration, 1, '2 years')
+            .dropDownSelector(this.createRequestPopup.dropDowns.budgetApproved, 2, 'in progress')
     }
 }
