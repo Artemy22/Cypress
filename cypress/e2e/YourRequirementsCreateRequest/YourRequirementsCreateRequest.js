@@ -24,29 +24,26 @@ describe('Basic Steps to avoid dupes', () => {
     })
 
     When('I fill all mandatory fields out', () => {
-        yourRequirements.fillOutNumberOfRolesDropDown();
+        yourRequirements.fillOutCreateRequestForm().fillOutPreferredAttributesInput();
     })
 
     Then('I click on Create request button', () => {
-    })
-
-    Then('I have my account created', () => {
-    })
-
-    Then('I directed to the Skill Match step', () => {
+        yourRequirements.clickButtonCreateRequest();
     })
 
     Then('I directed to the Skill Match step', () => {
+        yourRequirements.isOnPageSkillMatch();
     })
 
     Then('I check my request details to fit the ones I filled on the Create request step', () => {
+        yourRequirements.checkSkillMatchStepOfCreatedRequirements();
     })
 
     Then('I cancel the request', () => {
+        yourRequirements.cancelRequest();
     })
 
     Then('Then Sign out', () => {
+        profilePage.signOut();
     })
-
-
 })

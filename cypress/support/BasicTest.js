@@ -51,11 +51,12 @@ export class BasicTest {
     }
 
     isOnPageViaContains(pageElement) {
-        cy.contains(pageElement).should('be.visible')
+        cy.contains(pageElement).should('be.visible');
+        return this;
     }
 
     dropDownSelector(dropDownName, index, expectedValue) {
-        cy.get(dropDownName).select(index).should('have.value', expectedValue);  
+        cy.get(dropDownName).select(index).should('have.value', expectedValue);
         return this;
         //cy.get('select').select('apples').should('have.value', '456')
         //cy.get('select').select(0).should('have.value', '456')
