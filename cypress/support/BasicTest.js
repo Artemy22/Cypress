@@ -17,7 +17,11 @@ export class BasicTest {
     buttonClicker(button) {
         cy.get(button).click({ force: true });
         return this;
+    }
 
+    buttonClickerWithContains(containsElement) {
+        cy.contains(containsElement).click({ force: true });
+        return this;
     }
 
     inputClearer(input) {
@@ -47,7 +51,20 @@ export class BasicTest {
     }
 
     isOnPageViaContains(pageElement) {
-        cy.contains(pageElement).should('be.visible')
+        cy.contains(pageElement).should('be.visible');
+        return this;
+    }
+
+    dropDownSelector(dropDownName, index, expectedValue) {
+        cy.get(dropDownName).select(index).should('have.value', expectedValue);
+        return this;
+        //cy.get('select').select('apples').should('have.value', '456')
+        //cy.get('select').select(0).should('have.value', '456')
+    }
+
+    divChildrenCounter(mainDiv, expectedElementsCount) {
+        cy.get(mainDiv).children().should('have.length', expectedElementsCount);
+        return this;
     }
 
     /*  TO REFACTOR

@@ -7,6 +7,7 @@ let startDate = '';
 
 export class ProfilePage {
     locatorDropDownUser = '.css-b4y3aj';
+    locatorYourRequirements = 'Your requirements';
     locatorAccountSettings = 'Account settings';
     buttonSignOut = '[href="/sign-out"]';
     buttonEditProfile = '.css-59wuf6';
@@ -41,6 +42,10 @@ export class ProfilePage {
     _valueCompany;
     _valueLocation;
     _locationPhoneNumber;
+
+    clickOnYourRequirementsMainHeader() {
+        basicTest.buttonClickerWithContains(this.locatorYourRequirements);
+    }
 
     clickDropDownUser() {
         basicTest.buttonClicker(this.locatorDropDownUser);
